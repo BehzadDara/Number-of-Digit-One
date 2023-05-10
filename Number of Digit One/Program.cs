@@ -16,7 +16,7 @@ LeetCode link: https://leetcode.com/problems/number-of-digit-one/
 
 #region Solution
 
-Console.WriteLine(CountDigitOne(20));
+Console.WriteLine(CountDigitOne(11));
 static int CountDigitOne(int n)
 {
     var result = 0;
@@ -24,11 +24,11 @@ static int CountDigitOne(int n)
     for (var i = 1; i <= n; i *= 10)
     {
         var a = n / i;
-        var b = n % i;
         var x = a % 10;
 
         if (x == 1)
         {
+            var b = n % i;
             result += (a / 10) * i + (b + 1);
         }
         else if (x == 0)
