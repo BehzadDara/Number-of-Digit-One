@@ -23,21 +23,21 @@ static int CountDigitOne(int n)
 
     for (var i = 1; i <= n; i *= 10)
     {
-        var a = n / i;
-        var x = a % 10;
+        var before = n / i;
+        var current = before % 10;
 
-        if (x == 0)
+        if (current == 0)
         {
-            result += (a / 10) * i;
+            result += (before / 10) * i;
         }
-        else if (x == 1)
+        else if (current == 1)
         {
-            var b = n % i;
-            result += (a / 10) * i + (b + 1);
+            var after = n % i;
+            result += (before / 10) * i + (after + 1);
         }
         else
         {
-            result += (a / 10 + 1) * i;
+            result += (before / 10 + 1) * i;
         }
     }
 
